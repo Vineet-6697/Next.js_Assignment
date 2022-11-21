@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.2",
+    "fa-icons": "^0.2.0",
+    "favicons": "^7.0.2",
+    "mdb-react-ui-kit": "^5.0.0",
     "next": "13.0.3",
     "react": "18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "18.2.0"
   }
 }
