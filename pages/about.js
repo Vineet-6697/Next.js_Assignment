@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/Image'
+import  styles from "../styles/About.module.scss"
 
 export const getStaticProps = async()=>{
   const response = await fetch('https://fakestoreapi.com/products');
@@ -14,7 +15,7 @@ const about = (props) => {
   const {productData} = props;
   return (
     <>
-    <div className='text-center' > <h1>About </h1></div>
+    <div className={styles.next_text} > <h1>About </h1></div>
     {productData.map(item =>(
       <>
       <div className="row ">

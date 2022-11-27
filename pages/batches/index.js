@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Link from 'next/link'
 
 
 export const getStaticProps = async()=>{
@@ -12,7 +13,7 @@ export const getStaticProps = async()=>{
   }
 }
 
-const Products = (props) => {
+const Batches = (props) => {
   const {productData} = props;
   return (
     <>
@@ -20,7 +21,8 @@ const Products = (props) => {
     <>
     
     <Card style={{ width:'19.5rem' }} className=' d-inline-flex mt-3   ms-5 '>
-      <Card.Img variant="top" src={item.image} width={200} height={250} />
+    <Link href={`/batches/${item.id}`}>
+      <Card.Img variant="top" src={item.image} width={200} height={250} /> </Link>
       <Card.Body>
         <Card.Title>{item.title.substr(0, 20)}</Card.Title>
         <Card.Text className='fs-5 text fst-italic'>
@@ -36,10 +38,11 @@ const Products = (props) => {
         <Button variant="primary" className='mt-2'>Add to Cart</Button>
       </Card.Body>
     </Card>
+   
     </>
   ))
   
 }
 </>)}
 
-export default Products
+export default Batches
