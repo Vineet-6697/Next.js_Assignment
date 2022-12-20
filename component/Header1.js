@@ -15,7 +15,7 @@ const Head1 = () => {
     <div className='col-3'>
        
         {/* <button onClick={logoutFn}>Logout</button> */}
-        <Nav.Link onClick={logoutFn} href='/login'>Logout</Nav.Link>
+        <Nav.Link onClick={logoutFn} href='/logout'>Logout</Nav.Link>
     </div>
   )
 }
