@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useRouter} from 'next/router';
 import axios from 'axios';
+import styles from "../styles/login.module.css";
 
 export const getStaticProps = () => {
     let url = 'http://localhost:3000/';
@@ -51,11 +52,14 @@ const Login = (props) => {
                 This is a danger alert—check it out!
                 </div>
         )}
-        Email: <input type="email" name="email" onChange={handleChange}/>
-        <br></br>
+         <div className={styles.center_div}>
+        Email : <input type="email" name="email" onChange={handleChange}/>
+        <br /> <br />
+        
         Password: <input type="password" name="password" onChange={handleChange}/>
-        <br></br>
+        <br /> <br />
         <button onClick={loginFn}>Submit</button>
+        </div>
 
     </div>
   )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
 import axios from 'axios';
+import styles from "../styles/login.module.css";
 
 export const getStaticProps = () => {
     let url = 'http://localhost:3000/';
@@ -91,19 +92,21 @@ const Registration = (props) => {
             input elements
             <button type='submit'></button>
         </form> */}
-        Name: <input type="text" name="name" onChange={handleChange} />
+         <div className={styles.center_div}>
+        Name : <input type="text" name="name" onChange={handleChange} />
         <span className='text-danger'>{errorformdata.name}</span>
-        <br></br>
-        Email: <input type="email" name="email" onChange={handleChange} />
+       <br /> <br />
+        Email : <input type="email" name="email" onChange={handleChange} />
         <span className='text-danger'>{errorformdata.email}</span>
-        <br></br>
-        Mobile: <input type="text" name="mobile" onChange={handleChange} />
+        <br /> <br />
+        Mobile : <input type="text" name="mobile" onChange={handleChange} />
         <span className='text-danger'>{errorformdata.mobile}</span>
-        <br></br>
-        Password: <input type="password" name="password" onChange={handleChange} />
+        <br /> <br />
+        Password : <input type="password" name="password" onChange={handleChange} />
         <span className='text-danger'>{errorformdata.password}</span>
-        <br></br>
+        <br /> <br />
         <button onClick={registerFn}>Submit</button>
+        </div>
 
       
     </div>
