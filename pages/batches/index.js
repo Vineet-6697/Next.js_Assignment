@@ -20,7 +20,7 @@ const Batches = (props) => {
     {productData.map(item =>(
     <>
     
-    <Card style={{ width:'19.5rem' }} className=' d-inline-flex mt-3   ms-5 '>
+    <Card style={{ width:'19.5rem' }} className=' d-inline-flex mt-3   ms-3 '>
     <Link href={`/batches/${item.id}`}>
       <Card.Img variant="top" src={item.image} width={200} height={250} /> </Link>
       <Card.Body>

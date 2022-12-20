@@ -10,7 +10,7 @@ const handler = async(req, res) => {
         try{
             
             let temp = new Users({
-                userid: req.body.userid,
+                userid: (parseInt(Math.random()*100000000).toString()),
                 name: req.body.name,
                 email: req.body.email,
                 mobile: req.body.mobile,

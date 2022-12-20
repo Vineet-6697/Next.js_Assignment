@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/Image'
+
 import  styles from "../styles/About.module.scss"
 
 export const getStaticProps = async()=>{

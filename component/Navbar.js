@@ -38,7 +38,7 @@ const Nabvar = (children) => {
         <Nav className="me-auto">
         <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/logout">Log Out</Nav.Link>
-            <Nav.Link href="/register">Register</Nav.Link>
+            <Nav.Link href="/registeration">Register</Nav.Link>
             </Nav>
 
         </div>

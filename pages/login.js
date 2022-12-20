@@ -1,21 +1,64 @@
-import React from 'react'
-import styles from "../styles/login.module.css"
+import React, { useState } from 'react';
+import {useRouter} from 'next/router';
+import axios from 'axios';
 
-const register = () => {
+export const getStaticProps = () => {
+    let url = 'http://localhost:3000/';
+    return {
+        props: {
+            baseurl: url
+        }
+    }
+}
+
+const Login = (props) => {
+    const [formdata, setFormdata] = useState({});
+    const [submitStatus, setSubmitStatus] = useState(false);
+    const router = useRouter();
+    const {baseurl} = props;
+    console.log('baseurl', baseurl);
+
+    const loginFn = async () => {
+        console.log('formdata', formdata, process.env.BASE_URL);
+        const url =  baseurl + 'api/users/login';
+        try{
+            const response = await axios.post(url, formdata);
+            console.log(response.data);
+            if(response.data.userid) {
+                localStorage.setItem('loginStatus', true);
+                localStorage.setItem('username', response.data.email);
+                localStorage.setItem('name', response.data.name)
+                router.push('/products');
+            }
+        }
+        catch{
+            setSubmitStatus(true);
+        }
+    }
+
+    const handleChange = (e) => {
+        console.log(e.target.name, e.target.value);
+        let tempObj = {};
+        tempObj[e.target.name] = e.target.value;
+        setFormdata({...formdata, ...tempObj});
+    }
+
   return (
-    <>
-     <h3 className='text-center'>Login</h3>
-    <div className={styles.center_div}>
-       
-    <div className="text-center  mt-2 mb-2">
-    <label > User Name : </label>
-    <input  placeholder=' type your name here'/>  <br /> <br />
-    <label> Password : </label>
-    <input  placeholder=' type your name here'/> 
+    <div>
+      
+      {submitStatus && (
+            <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+                </div>
+        )}
+        Email: <input type="email" name="email" onChange={handleChange}/>
+        <br></br>
+        Password: <input type="password" name="password" onChange={handleChange}/>
+        <br></br>
+        <button onClick={loginFn}>Submit</button>
+
     </div>
-    </div>
-    </>
   )
 }
 
-export default register
+export default Login

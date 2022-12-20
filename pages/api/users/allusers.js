@@ -4,7 +4,7 @@ import connectDb from "../../../middleware/mongoose";
 
 const handler = async(req, res) => {
         try{   
-            console.log('inside all users.')
+            // console.log('inside all users.')
             let data = await Users.find({}); 
             res.status(200).json(data);
         }
