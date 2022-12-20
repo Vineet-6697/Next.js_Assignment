@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Header1 from './Header1';
 
 const Nabvar = (children) => {
   return (
@@ -37,7 +38,7 @@ const Nabvar = (children) => {
         <div className="col-md-3">
         <Nav className="me-auto">
         <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/logout">Log Out</Nav.Link>
+           <Header1 />
             <Nav.Link href="/registeration">Register</Nav.Link>
             </Nav>
 
