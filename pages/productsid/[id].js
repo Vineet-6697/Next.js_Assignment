@@ -3,7 +3,7 @@ import React from 'react'
 export const getServerSideProps = async(context) =>{
   const id = context.params.id;
  
-  const response = await fetch('https://fakestoreapi.com/products/'+ id);
+  const response = await fetch(process.env.API_URL+id);
   const data = await response.json();
   return{
     props: {productdata  :data}

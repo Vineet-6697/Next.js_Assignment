@@ -4,7 +4,7 @@ import axios from 'axios';
 import styles from "../styles/login.module.css";
 
 export const getStaticProps = () => {
-    let url = 'http://localhost:3000/';
+    let url = process.env.BASE_URL;
     return {
         props: {
             baseurl: url
@@ -30,8 +30,8 @@ const Registration = (props) => {
     const registerFn = async () => {
         const validationStatus = validate();
         if(validationStatus) {
-            console.log('formdata', formdata, 'http://localhost:3000/');
-            const url =  'http://localhost:3000/api/users/register';
+            console.log('formdata', formdata, process.env.BASE_URL);
+            const url =  baseurl + 'api/users/register'
             try{
                 const response = await axios.post(url, formdata);
                 console.log(response.data);

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const getStaticPaths = async()=>{
     // const arr = ["2022", "2021", "2020", "2019"];
-    const response = await fetch('https://fakestoreapi.com/products/');
+    const response = await fetch(process.env.API_URL);
     const arr = await response.json();
     const paths = arr.map((item)=>{
         return {
@@ -18,7 +18,7 @@ export const getStaticPaths = async()=>{
 export const getStaticProps = async(context)=>{
     // console.log(context.params);
     const temp = context.params.year;
-    const response = await fetch('https://fakestoreapi.com/products/'+temp);
+    const response = await fetch(process.env.API_URL+temp);
     const data = await response.json();
 
     return{
