@@ -4,7 +4,7 @@ import axios from 'axios';
 import styles from "../styles/login.module.css";
 
 export const getStaticProps = () => {
-    let url = 'http://localhost:3000/';
+    let url = process.env.BASE_URL;
     return {
         props: {
             baseurl: url
