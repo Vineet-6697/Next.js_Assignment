@@ -29,7 +29,7 @@ const Login = (props) => {
                 localStorage.setItem('loginStatus', true);
                 localStorage.setItem('username', response.data.email);
                 localStorage.setItem('name', response.data.name)
-                router.push('/products');
+                router.push('/');
             }
         }
         catch{
