@@ -52,14 +52,15 @@ const Login = (props) => {
                 This is a danger alert—check it out!
                 </div>
         )}
-        <h4 className='text-center'>  You are Logged out , please login to Go ahead !!</h4>
-         <div className={styles.center_div}>
-        Email : <input type="email" name="email" onChange={handleChange}/>
-        <br /> <br />
         
-        Password: <input type="password" name="password" onChange={handleChange}/>
-        <br /> <br />
-        <button onClick={loginFn}>Submit</button>
+         <div className={styles.center_div}>
+         <h5 className='text-center mb-4 '>  You are Logged out , Please login to Go ahead !!</h5>
+         <input type="email" name="email" className='form-control' placeholder='Enter E-mail' onChange={handleChange}/>
+        <br /> 
+        
+        <input type="password" name="password"  className='form-control' placeholder='Password' onChange={handleChange}/>
+        <br /> 
+        <button className='btn btn-danger' onClick={loginFn}>Submit</button>
         </div>
 
     </div>

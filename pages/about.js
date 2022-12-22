@@ -1,41 +1,31 @@
-import React from 'react'
+import React from "react";
+import styles from "../styles/login.module.css";
 
-import  styles from "../styles/About.module.scss"
-
-export const getStaticProps = async()=>{
-  const response = await fetch('https://fakestoreapi.com/products');
-  
-  const data = await response.json();
-  return{
-    props:{productData: data}
-  }
-}
-
-const about = (props) => {
-  const {productData} = props;
+const about = () => {
   return (
-    <>
-    <div className={styles.next_text} > <h1>About </h1></div>
-    {productData.map(item =>(
-      <>
-      <div className="row ">
-      <div className="col-md-6  ">
-      <div className='bg-secondary'> {item.id}</div>
-      <div className='bg-info'> {item.title}</div>
-      <div  className='bg-warning'> {item.description}</div>
-      <div  className='mb-5 bg-success'> {item.category}</div>
-      <div > <img className='' src={item.image} width='250' height='300' /></div>
-      <div > Rating : {item.rating.rate}  Count : {item.rating.count} </div>
+    <div>
+      <div className={styles.bannerabout}>
+        <h1 className=" pt-5 ms-5 ps-5  text-light ">About-Us</h1>
       </div>
+      <div className="col-md-7 offset-1">
+      <h1 className=" mt-5">
+        Thank you for visiting Courageous Brand  Products Web
+        site.
+      </h1>
+      <p className="pb-5 me-5 mt-5 ">
+        Courageous is a leading manufacturer of trending wear products and we are proud
+        of our product line and the benefits it gives to peoples world wide.
+        For over 50 years, Courageous has been the first choice of consumers when
+        purchasing products . It is the brand people trust
+        to aid in the well-being of their styles/looking. We have an exceptional
+        workforce: dedicated, loyal employees who enjoy working in the
+        motivating and challenging work environment at Courageous. 
+         Our commitment to you is to provide products with incomparable
+        quality and performance to ensure the latest trends and hight quality and value for money. 
+      </p>
       </div>
-      </>
-     
-     
-    )
-    )}
-    </>
-    
-    )
-}
+    </div>
+  );
+};
 
-export default about
+export default about;

@@ -14,12 +14,6 @@ export const getStaticProps = () => {
 
 const Registration = (props) => {
 
-    // const initilObj = {
-    //     name: '',
-    //     email: '',
-    //     mobile: '',
-    //     password: ''
-    // }
     const [formdata, setFormdata] = useState({});
     const [errorformdata, setErrorFormdata] = useState({});
     const [submitStatus, setSubmitStatus] = useState(false);
@@ -37,7 +31,7 @@ const Registration = (props) => {
                 console.log(response.data);
                 if(response.status === 201) {
                     setSubmitStatus(true);
-                    //setFormdata(initilObj);
+                 
                     router.push('/login');
                 }
             }
@@ -51,7 +45,7 @@ const Registration = (props) => {
     const validate = () => {
         if(formdata.mobile) {
             if(formdata.mobile.length >5) {
-                //remove error for mobile field
+              
                 return true;
             }
             else {
@@ -88,24 +82,22 @@ const Registration = (props) => {
                 Form submitted.
             </div>
         )}
-        {/* <form action="api/login">
-            input elements
-            <button type='submit'></button>
-        </form> */}
+       
          <div className={styles.center_div}>
-        Name : <input type="text" name="name" onChange={handleChange} />
+            <h3 className='mb-4 text-center'> Registeration</h3>
+         <input type="text" name="name" className='form-control' placeholder='Name' onChange={handleChange} />
         <span className='text-danger'>{errorformdata.name}</span>
-       <br /> <br />
-        Email : <input type="email" name="email" onChange={handleChange} />
+       <br /> 
+         <input type="email" name="email" className='form-control' placeholder='Enter E-mail' onChange={handleChange} />
         <span className='text-danger'>{errorformdata.email}</span>
-        <br /> <br />
-        Mobile : <input type="text" name="mobile" onChange={handleChange} />
+        <br /> 
+         <input type="text" name="mobile" className='form-control' placeholder='Mobile Number' onChange={handleChange} />
         <span className='text-danger'>{errorformdata.mobile}</span>
-        <br /> <br />
-        Password : <input type="password" name="password" onChange={handleChange} />
+        <br /> 
+         <input type="password" name="password" className='form-control' placeholder='Password' onChange={handleChange} />
         <span className='text-danger'>{errorformdata.password}</span>
-        <br /> <br />
-        <button onClick={registerFn}>Submit</button>
+        <br /> 
+        <button className='btn btn-warning' onClick={registerFn}>Submit</button>
         </div>
 
       

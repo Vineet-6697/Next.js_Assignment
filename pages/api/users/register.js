@@ -3,7 +3,7 @@ import Users from "../../../models/Users";
 import connectDb from "../../../middleware/mongoose";
 
 
-//POST api call to find a single user
+
 const handler = async(req, res) => {
     if(req.method == 'POST') {
         console.log(req.body);

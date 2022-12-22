@@ -1,8 +1,35 @@
 .center_div{
-border: 2px solid black;
 padding: 20px;
 width: 400px;
 margin: 20px  auto;
-background-color: lightgray;
+padding-top: 5%;
+padding-bottom: 15%;
 
 }
+
+
+
+.bannercontact{
+    background-image: url(../public/bannner1.png);
+    height: 300px;
+    width: 100%;
+    position: inherit;
+    vertical-align: middle;
+    object-fit: cover;
+    object-position: 100%;
+    padding-top: 100px;
+  }
+
+  .bannerabout{
+    background-image: url(../public/banner2.png);
+    height: 300px;
+    width: 100%;
+    position: inherit;
+    vertical-align: middle;
+    object-fit: cover;
+    object-position: 100%;
+    padding-top: 100px;
+  }
+
+
+  

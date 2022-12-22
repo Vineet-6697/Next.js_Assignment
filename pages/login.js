@@ -53,12 +53,17 @@ const Login = (props) => {
                 </div>
         )}
          <div className={styles.center_div}>
-        Email : <input type="email" name="email" onChange={handleChange}/>
-        <br /> <br />
+            <h3 className='mb-4 text-center'> Login</h3>
+         <input type="email" name="email" className='form-control' placeholder='Enter E-mail' onChange={handleChange}/>
+        <br /> 
         
-        Password: <input type="password" name="password" onChange={handleChange}/>
-        <br /> <br />
-        <button onClick={loginFn}>Submit</button>
+         <input type="password" name="password" className='form-control' placeholder='Password' onChange={handleChange}/>
+         <br /> 
+         <h6> Don't have an account <a href="/registeration"> Register</a></h6>
+         <br /> 
+        
+        <button className='btn btn-success' onClick={loginFn}>Submit</button>
+       
         </div>
 
     </div>

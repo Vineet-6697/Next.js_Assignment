@@ -3,16 +3,14 @@ import Users from "../../../models/Users";
 import connectDb from "../../../middleware/mongoose";
 
 
-//POST api call to find a single user
 const handler = async(req, res) => {
     if(req.method == 'POST') {
         console.log(req.body);
         try{
             
             let data = await Users.findOne({email: req.body.email})
-            // find - return an array - find length of array === 1
-            // findOne - retun an object - check null - null/{}
-            if(data !== null) { // findonw will retun null if no data
+            
+            if(data !== null) { 
                 console.log('user found.................')
                 if(data.password === req.body.password) {
                     res.status(200).json(data);
@@ -38,10 +36,5 @@ const handler = async(req, res) => {
 export default connectDb(handler);
 
 
-
-
-// email does not exist
-// password does not match
-// both failed
 
 
