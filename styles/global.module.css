@@ -30,6 +30,9 @@ padding-bottom: 15%;
     object-position: 100%;
     padding-top: 100px;
   }
-
+ .listing_page{
+  background-color: white;
+  display: flex;
+ }
 
   

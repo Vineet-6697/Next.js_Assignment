@@ -21,7 +21,7 @@ const Products = (props) => {
     <>
     
     <Card style={{ width:'19.5rem' }} className=' d-inline-flex mt-3   ms-3 '>
-    <Link href={`/batches/${item.id}`}>
+    <Link href={`/productsid/${item.id}`}>
       <Card.Img variant="top" src={item.image} width={200} height={250} /> </Link>
       <Card.Body>
         <Card.Title>{item.title.substr(0, 20)}</Card.Title>

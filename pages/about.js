@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/login.module.css";
+import styles from "../styles/global.module.css";
 
 const about = () => {
   return (

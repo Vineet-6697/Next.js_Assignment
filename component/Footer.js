@@ -14,7 +14,7 @@ export default function App() {
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © 2020 Copyright : 
         <a className='text-white ms-2' href='https://mdbootstrap.com/'>
-          Sampleproducts.com
+          Couragiousproducts.com
         </a>
       </div>
     </MDBFooter>
