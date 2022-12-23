@@ -51,7 +51,7 @@ const Productid = ({ res }) => {
         <div className='fw-bold  col' > Rating : {res.rating.rate} </div>
         </div> <br />
           <div className="fw-bold">  Category  : {res.category} </div>  <br />
-          <button className="btn btn-success"> Add to cart</button> 
+          <button className="btn btn-success mb-5"> Add to cart</button> 
         </div>
         
        
